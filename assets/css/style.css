@@ -5,11 +5,9 @@
 }
 
 header{
-  display: flex;
-  justify-content: center;
+  text-align: center;
+  padding: 20px 0px;
   background-color: #a36370;
-  padding: 20px 40px;
-
 }
 
 #site-title{
@@ -18,12 +16,85 @@ header{
   font-weight: 900;
   letter-spacing: 0.5em;
   text-transform: uppercase;
+}
 
+#site-subtitle{
+  color: #b6897a;
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
 }
 
 nav{
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
   background-color: #b6897a;
+  color: #a36370;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
+
+.site-menu-item{
+  display: inline;
+  margin-right: 40px;
+  transition: opacity 0.15s;
+  cursor: pointer;
+}
+
+.site-menu-item:hover, #search-button:hover{
+  opacity: 0.5;
+}
+
+.site-menu-item:active, #search-button:active{
+  opacity: 1;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 20px;
+  background-color: #cbccbd;
+}
+
+#search-input{
+  display: block;
+  margin: 20px 0px;
+  width: 500px;
+  padding: 10px;
+  font-size: 20px;
+  font-family: inherit;
+  text-align: center;
+}
+
+#search-button,{
+  margin: 20px 0px;
+  border: 0px;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 20px;
+  font-family: inherit;
+  text-align: center;
+  text-transform: uppercase;
+  transition: opacity 0.15s;
+  cursor: pointer;
+}
+
+#genre-grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.genre-button{
+  margin: 10px 10px;
+  border: 0px;
+  border-radius: 10px;
+  padding: 15px;
+}
+
 
 footer{
   background-color: #a36370;
