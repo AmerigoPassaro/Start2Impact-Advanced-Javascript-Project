@@ -1,0 +1,30 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  font: Georgia, Serif;
+}
+
+header{
+  display: flex;
+  justify-content: center;
+  background-color: #a36370;
+  padding: 20px 40px;
+
+}
+
+#site-title{
+  color: #b6897a;
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: 0.5em;
+  text-transform: uppercase;
+
+}
+
+nav{
+  background-color: #b6897a;
+}
+
+footer{
+  background-color: #a36370;
+}
