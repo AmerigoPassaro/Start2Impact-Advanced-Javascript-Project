@@ -60,17 +60,26 @@ main{
   background-color: #cbccbd;
 }
 
+form label{
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
 #search-input{
   display: block;
-  margin: 20px 0px;
   width: 500px;
+  margin: 20px 0px;
+  border: 0px;
+  border-radius: 10px;
   padding: 10px;
   font-size: 20px;
   font-family: inherit;
   text-align: center;
 }
 
-#search-button,{
+#search-button{
   margin: 20px 0px;
   border: 0px;
   border-radius: 10px;
@@ -83,19 +92,50 @@ main{
   cursor: pointer;
 }
 
-#genre-grid{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+#seach-result{
+    width: 100%;
+    margin-top: 40px;
 }
 
-.genre-button{
-  margin: 10px 10px;
-  border: 0px;
+#result-header{
+  background-color: #c1b8a3;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+#result-header th{
   border-radius: 10px;
   padding: 15px;
 }
 
+.result-item td{
+  padding: 7.5px 0px;
+}
+
+#book-description{
+  width: 500px;
+  margin: 40px 0px;
+}
+
+#book-description h2{
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+#book-description label, #book-description span{
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+#book-description p{
+  line-height: 2em;
+}
 
 footer{
+  text-align: center;
+  padding: 20px 0px;
   background-color: #a36370;
+  color: #b6897a;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }

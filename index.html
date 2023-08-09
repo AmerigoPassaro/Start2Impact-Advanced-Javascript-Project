@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title></title>
+    <title>Start2Impact Advanced JavaScript Project</title>
     <link href="assets/css/style.css" rel="stylesheet">
   </head>
   <body>
@@ -21,21 +21,56 @@
       </ul>
 
     </nav>
+
+
     <main>
-      <form>
-        <label>Titolo</label>
-        <input id="search-input" placeholder="Titolo del Libro">
-        <button id="search-button">Cerca</button>
-      </form>
-      <div id="genre-grid">
-        <button class="genre-button">1</button>
-        <button class="genre-button">2</button>
-        <button class="genre-button">3</button>
-        <button class="genre-button">4</button>
-        <button class="genre-button">5</button>
-        <button class="genre-button">6</button>
+      <div>
+
+        <!-- FORM DI RICERCA -->
+        <form>
+          <label>Genere</label>
+          <input id="search-input" placeholder="Genere del Libro">
+          <button id="search-button">Cerca</button>
+        </form>
+
+        <!-- RISULTATO DELLA RICERCA -->
+        <table id="seach-result">
+          <tr id="result-header">
+            <th>#</th>
+            <th>Titolo</th>
+            <th>Autore</th>
+          </tr>
+          <tr class="result-item">
+            <td>1</td>
+            <td>Alice's Adventures in Wonderland</td>
+            <td>Lewis Carroll</td>
+          </tr>
+          <tr class="result-item">
+            <td>2</td>
+            <td>Treasure Island</td>
+            <td>Robert Louis Stevenson</td>
+          </tr>
+        </table>
+
+        <!-- DESCRIZIONE-->
+        <article id="book-description">
+          <h2>Alice's Adventures in Wonderland</h2>
+          <label>Autore</label> : <span>Lewis Carroll</span>
+          <p>
+            One of the most popular and most quoted books in English, Alice's Adventures in Wonderland was the creation of Charles Lutwidge Dodgson (1832–1898), a distinguished scholar, mathematician and author who wrote under the pseudonym of Lewis Carroll. Written for young readers but enjoyed equally by adults, the fantastic tale
+          </p>
+        </article>
+
+
+
       </div>
+
+
     </main>
-    <footer>Footer</footer>
+
+    <footer>
+      <h3>Amerigo Passaro &copy</h3>
+    </footer>
+
   </body>
 <html<
