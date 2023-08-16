@@ -93,6 +93,7 @@ form label{
 }
 
 #seach-result{
+  display: none;
     width: 100%;
     margin-top: 40px;
 }
@@ -113,6 +114,7 @@ form label{
 }
 
 #book-description{
+  display: none;
   width: 500px;
   margin: 40px 0px;
 }
@@ -129,6 +131,14 @@ form label{
 
 #book-description p{
   line-height: 2em;
+}
+
+.result-title{
+  border: 0px;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
 }
 
 footer{

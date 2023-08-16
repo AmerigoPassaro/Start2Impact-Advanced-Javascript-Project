@@ -30,8 +30,9 @@
         <form>
           <label>Genere</label>
           <input id="search-input" placeholder="Genere del Libro">
-          <button id="search-button">Cerca</button>
+
         </form>
+        <button id="search-button" onclick="openTab()">Cerca</button>
 
         <!-- RISULTATO DELLA RICERCA -->
         <table id="seach-result">
@@ -42,12 +43,12 @@
           </tr>
           <tr class="result-item">
             <td>1</td>
-            <td>Alice's Adventures in Wonderland</td>
+            <td><button class="result-title" onclick="openDes()">Alice's Adventures in Wonderland</button></td>
             <td>Lewis Carroll</td>
           </tr>
           <tr class="result-item">
             <td>2</td>
-            <td>Treasure Island</td>
+            <td><button class="result-title" onclick="openDes()">Treasure Island</button></td>
             <td>Robert Louis Stevenson</td>
           </tr>
         </table>
@@ -71,6 +72,7 @@
     <footer>
       <h3>Amerigo Passaro &copy</h3>
     </footer>
-
   </body>
-<html<
+  <script src="assets/js/functions.js" type="text/javascript"></script>
+  <script src="assets/js/functions2.js" type="text/javascript"></script>
+<html>
