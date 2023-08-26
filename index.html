@@ -3,6 +3,7 @@
   <head>
     <title>Start2Impact Advanced JavaScript Project</title>
     <link href="assets/css/style.css" rel="stylesheet">
+
   </head>
   <body>
     <header>
@@ -15,64 +16,51 @@
     </header>
     <nav>
       <ul id="site-menu">
-        <li class="site-menu-item">Item1</li>
+        <li class="site-menu-item"><a href="index.html">Home</a></li>
         <li class="site-menu-item">Item2</li>
         <li class="site-menu-item">Item3</li>
       </ul>
 
     </nav>
 
-
     <main>
+
       <div>
 
-        <!-- FORM DI RICERCA -->
         <form>
-          <label>Genere</label>
-          <input id="search-input" placeholder="Genere del Libro">
-
+          <label for="search-input">Genre</label>
+          <input id="search-input" placeholder="Book Genre">
         </form>
-        <button id="search-button" onclick="openTab()">Cerca</button>
 
-        <!-- RISULTATO DELLA RICERCA -->
+        <button id="search-button" onclick="search()">Search</button>
+
+
         <table id="seach-result">
+          <thead>
           <tr id="result-header">
             <th>#</th>
-            <th>Titolo</th>
-            <th>Autore</th>
+            <th>Title</th>
+            <th>Author</th>
           </tr>
-          <tr class="result-item">
-            <td>1</td>
-            <td><button class="result-title" onclick="openDes()">Alice's Adventures in Wonderland</button></td>
-            <td>Lewis Carroll</td>
-          </tr>
-          <tr class="result-item">
-            <td>2</td>
-            <td><button class="result-title" onclick="openDes()">Treasure Island</button></td>
-            <td>Robert Louis Stevenson</td>
-          </tr>
+          </thead>
+          <tbody id="results">
+          </tbody>
         </table>
 
-        <!-- DESCRIZIONE-->
+
         <article id="book-description">
-          <h2>Alice's Adventures in Wonderland</h2>
-          <label>Autore</label> : <span>Lewis Carroll</span>
-          <p>
-            One of the most popular and most quoted books in English, Alice's Adventures in Wonderland was the creation of Charles Lutwidge Dodgson (1832–1898), a distinguished scholar, mathematician and author who wrote under the pseudonym of Lewis Carroll. Written for young readers but enjoyed equally by adults, the fantastic tale
-          </p>
+
         </article>
 
-
-
       </div>
-
 
     </main>
 
     <footer>
       <h3>Amerigo Passaro &copy</h3>
     </footer>
+
   </body>
-  <script src="assets/js/functions.js" type="text/javascript"></script>
-  <script src="assets/js/functions2.js" type="text/javascript"></script>
+    <script src="assets/js/functions.js" type="text/javascript"></script>
+
 <html>

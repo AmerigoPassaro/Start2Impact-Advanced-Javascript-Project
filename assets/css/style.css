@@ -52,6 +52,11 @@ nav{
   opacity: 1;
 }
 
+a{
+  color: inherit;
+  text-decoration: none;
+}
+
 main{
   display: flex;
   justify-content: center;
@@ -94,8 +99,8 @@ form label{
 
 #seach-result{
   display: none;
-    width: 100%;
-    margin-top: 40px;
+  width: 100%;
+  margin-top: 40px;
 }
 
 #result-header{
@@ -110,11 +115,11 @@ form label{
 }
 
 .result-item td{
-  padding: 7.5px 0px;
+  max-width: 166px;
+  padding: 10px 0px;
 }
 
 #book-description{
-  display: none;
   width: 500px;
   margin: 40px 0px;
 }
