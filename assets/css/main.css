@@ -1,0 +1,88 @@
+main{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 20px;
+  background-color: #cbccbd;
+}
+
+form label{
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+#search-input{
+  display: block;
+  width: 500px;
+  margin: 20px 0px;
+  border: 0px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 20px;
+  font-family: inherit;
+  text-align: center;
+}
+
+#search-button{
+  margin: 20px 0px;
+  border: 0px;
+  border-radius: 10px;
+  padding: 15px;
+  font-size: 20px;
+  font-family: inherit;
+  text-align: center;
+  text-transform: uppercase;
+  transition: opacity 0.15s;
+  cursor: pointer;
+}
+
+#seach-result{
+  display: none;
+  width: 100%;
+  margin-top: 40px;
+}
+
+#result-header{
+  background-color: #c1b8a3;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+#result-header th{
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.result-item td{
+  max-width: 166px;
+  padding: 10px 0px;
+}
+
+#book-description{
+  width: 500px;
+  margin: 40px 0px;
+}
+
+#book-description h2{
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+#book-description label, #book-description span{
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+#book-description p{
+  line-height: 2em;
+}
+
+.result-title{
+  border: 0px;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
