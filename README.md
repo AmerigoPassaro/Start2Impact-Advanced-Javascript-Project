@@ -18,9 +18,10 @@ Il codice è interamente da me progettato, dunque prima di utilizzarlo sarebbe g
 ## Istruzioni d'uso
 Il funzionamento è abbastanza semplice. Ma ecco una piccola guida:
 
-1. Clicca sul [seguente link](https://amerigopassaro.github.io/Start2Impact-Basic-Javascript-Project/);
-2. Successivamente leggi le istruzioni inserite nella descrizione, come primo paragrafo nella sezione "main";
-3. Infine prova a cliccare sui vari pulsanti per provare ad incrementare o decrementare un numero;
+1. Clicca sul [seguente link](https://amerigopassaro.github.io/Start2Impact-Advanced-Javascript-Project/);
+2. Successivamente inserire all'interno dell'input sotto la label "Genre" il genere di cui si vuol ricevere una lista di consigli alla lettura;
+3. Di seguito verrà visualizzata una lista di libri e cliccando su uno qualsiasi questi, sarà possibile visualizzarne la descrizione;
+4. Infine cliccando sul button "Close" la pagina tornerà al punto di partenza, pronta per una nuova ricerca;
 
 Il gioco è fatto.
 
