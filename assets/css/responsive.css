@@ -1,0 +1,16 @@
+@media only screen and (max-width: 500px) {
+
+  #search-input{
+    width: 350px;
+  }
+
+  .result-item td{
+    max-width: 115px;
+  }
+
+  #book-description, #seach-result{
+    width: 350px;
+  }
+
+
+}
