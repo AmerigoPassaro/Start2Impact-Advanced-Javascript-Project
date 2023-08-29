@@ -16,11 +16,12 @@ form label{
 }
 
 #search-input{
+  display: inline;
   width: 500px;
 }
 
 #search-input, #search-button{
-  display: inline;
+
   margin: 20px 0px;
   border: 0px;
   border-radius: 10px;
@@ -31,6 +32,7 @@ form label{
 }
 
 #search-button{
+  display: block;
   width: 300px;
   text-transform: uppercase;
   transition: opacity 0.15s;
