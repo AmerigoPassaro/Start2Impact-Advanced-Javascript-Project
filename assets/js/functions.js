@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function(){
 	});
 });
 
+
 //Funzione di apertura descrizione {COMPLETA}
 function openDes(){
   //Estrapolazione della chiave del libro
@@ -31,40 +32,40 @@ function openDes(){
 }
 
 // Funzione di chiusura descrizione {COMPLETA}
-
 function closeDe(){
   //Cancellazione della descrizione
   boxDes.innerHTML = "";
 }
 
 //Funzione di apertura report di ricerca
-
 function search(){
-  // Eliminazione descrizione
-  boxDes.innerHTML = "";
-  bodyTable.innerHTML = "";
+
   // Etrapolazione dati dall'input
   let myGenre = document.querySelector("#search-input").value.toLowerCase();
   // Ciclo di creazione riga
   if(myGenre !== ""){
-    for (i = -12; limit > i; i++){
+
+    // Eliminazione descrizione e tabella
+    boxDes.innerHTML = "";
+    bodyTable.innerHTML = "";
+    // Collegamento al Json
+    fetch(`https://openlibrary.org/subjects/${myGenre}.json`)
+    .then(response => response.json())
+
       // Visualizzazione tabella
       bodyTable.parentNode.style.display = "table";
-      // Collegamento al Json
-      fetch(`https://openlibrary.org/subjects/${myGenre}.json`)
-      .then(response => response.json())
+      // Inserimento riga
       .then(commits => (
-        // Estrapolazione limite ed chiave
-        mainKey = commits.works[i].key,
-        limit = commits.works.length,
-        // Inserimento riga
+        for (i = 0; i <= commits.work_count; i++){
         bodyTable.insertAdjacentHTML("beforeend",
-        `<tr id="${i}" class="result-item" title="${mainKey.slice(7, mainKey.length)}">
+        `<tr id="${i}" class="result-item" title="${commits.works[i].key.replace("/works/","")}">
         <td>${i+1}</td>
         <td><button class="result-title" onclick="openDes()">${commits.works[i].title}</button></td>
         <td>${commits.works[i].authors[0].name}</td>
-        </tr>`), i++))
-    }
+        </tr>`)}
+      )
+    )
+
   }
   i = 0;
 }
