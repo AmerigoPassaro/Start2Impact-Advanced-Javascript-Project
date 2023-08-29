@@ -3,8 +3,15 @@ var i = 0;
 let bodyTable = document.querySelector("#results");
 let boxDes = document.querySelector("#book-description");
 
-//Funzione di apertura descrizione {COMPLETA}
 
+document.addEventListener("DOMContentLoaded", function(){
+	document.forms[0].addEventListener("submit", function(e){
+		e.preventDefault();
+		search();
+	});
+});
+
+//Funzione di apertura descrizione {COMPLETA}
 function openDes(){
   //Estrapolazione della chiave del libro
   let keyBook = event.target.parentNode.parentNode.title;
