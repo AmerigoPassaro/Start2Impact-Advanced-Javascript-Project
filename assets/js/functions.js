@@ -1,5 +1,7 @@
 let bodyTable = document.querySelector("#results");
 let boxDes = document.querySelector("#book-description");
+let button = document.querySelector("#search-button");
+let loading = document.querySelector("#search-loading");
 
 document.addEventListener("DOMContentLoaded", function(){
 	document.forms[0].addEventListener("submit", function(e){
@@ -17,16 +19,17 @@ function openDes(){
   // Collegamento al Json
   fetch(`https://openlibrary.org/works/${keyBook}.json`)
   .then(response => response.json())
-  .then(commits => (
+  .then(commits => {
+
+    let bookDes = (typeof(commits.description) === string) ? commits.description : "Sorry, but this book does not have a description." ;
     boxDes.insertAdjacentHTML("beforeend",
     // Inserimento descrizione
     `<h2>${commits.title}</h2>
-    <p>${commits.description}</p>
-    <button id="search-button" onclick="closeDe()">Close</button>`)))
+    <p>${bookDes}</p>
+    <button id="result-button" onclick="closeDe()">Close</button>`)})
   //Cancellazione della tabella
   bodyTable.innerHTML = "";
   bodyTable.parentNode.style.display = "none";
-  i = 0;
 }
 
 // Funzione di chiusura descrizione {COMPLETA}
@@ -47,18 +50,22 @@ function search(){
     bodyTable.innerHTML = "";
     // Visualizzazione tabella
     bodyTable.parentNode.style.display = "table";
+    button.style.display = "none";
+    loading.style.display = "block";
     // Collegamento al Json
     fetch(`https://openlibrary.org/subjects/${myGenre}.json`)
     .then(response => response.json())
     // Inserimento riga
-    .then(commits => { for (var i = 0; i < commits.work_count; i++){
+    .then(commits => {
+      button.style.display = "block";
+      loading.style.display = "none";
+      for (var i = 0; i < commits.work_count; i++){
         bodyTable.insertAdjacentHTML("beforeend",
         `<tr id="${i}" class="result-item" title="${commits.works[i].key.replace("/works/","")}">
         <td>${i+1}</td>
         <td><button class="result-title" onclick="openDes()">${commits.works[i].title}</button></td>
         <td>${commits.works[i].authors[0].name}</td>
-        </tr>`)
-      }
+        </tr>`)}
     })
   }
 }
