@@ -3,7 +3,6 @@ var i = 0;
 let bodyTable = document.querySelector("#results");
 let boxDes = document.querySelector("#book-description");
 
-
 document.addEventListener("DOMContentLoaded", function(){
 	document.forms[0].addEventListener("submit", function(e){
 		e.preventDefault();
@@ -13,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 //Funzione di apertura descrizione {COMPLETA}
+
 function openDes(){
   //Estrapolazione della chiave del libro
   let keyBook = event.target.parentNode.parentNode.title;
@@ -32,40 +32,40 @@ function openDes(){
 }
 
 // Funzione di chiusura descrizione {COMPLETA}
+
 function closeDe(){
   //Cancellazione della descrizione
   boxDes.innerHTML = "";
 }
 
 //Funzione di apertura report di ricerca
-function search(){
 
+function search(){
+  // Eliminazione descrizione
+  boxDes.innerHTML = "";
+  bodyTable.innerHTML = "";
   // Etrapolazione dati dall'input
   let myGenre = document.querySelector("#search-input").value.toLowerCase();
   // Ciclo di creazione riga
   if(myGenre !== ""){
-
-    // Eliminazione descrizione e tabella
-    boxDes.innerHTML = "";
-    bodyTable.innerHTML = "";
-    // Collegamento al Json
-    fetch(`https://openlibrary.org/subjects/${myGenre}.json`)
-    .then(response => response.json())
-
+    for (i = -12; limit > i; i++){
       // Visualizzazione tabella
       bodyTable.parentNode.style.display = "table";
-      // Inserimento riga
+      // Collegamento al Json
+      fetch(`https://openlibrary.org/subjects/${myGenre}.json`)
+      .then(response => response.json())
       .then(commits => (
-        for (i = 0; i <= commits.work_count; i++){
+        // Estrapolazione limite ed chiave
+        mainKey = commits.works[i].key,
+        limit = commits.works.length,
+        // Inserimento riga
         bodyTable.insertAdjacentHTML("beforeend",
-        `<tr id="${i}" class="result-item" title="${commits.works[i].key.replace("/works/","")}">
+        `<tr id="${i}" class="result-item" title="${mainKey.slice(7, mainKey.length)}">
         <td>${i+1}</td>
         <td><button class="result-title" onclick="openDes()">${commits.works[i].title}</button></td>
         <td>${commits.works[i].authors[0].name}</td>
-        </tr>`)}
-      )
-    )
-
+        </tr>`), i++))
+    }
   }
   i = 0;
 }
