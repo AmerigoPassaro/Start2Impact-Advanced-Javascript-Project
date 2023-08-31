@@ -1,8 +1,10 @@
+// Identificazione elementi della pagina
 let bodyTable = document.querySelector("#results");
 let boxDes = document.querySelector("#book-description");
 let button = document.querySelector("#search-button");
 let loading = document.querySelector("#search-loading");
 
+// Inserimento del preventDefault e dell'Evento sul form
 document.addEventListener("DOMContentLoaded", function(){
 	document.forms[0].addEventListener("submit", function(e){
 		e.preventDefault();
@@ -12,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
 
 //Funzione di apertura descrizione {COMPLETA}
-
 function openDes(){
   //Estrapolazione della chiave del libro
   let keyBook = event.target.parentNode.parentNode.title;
@@ -20,8 +21,9 @@ function openDes(){
   fetch(`https://openlibrary.org/works/${keyBook}.json`)
   .then(response => response.json())
   .then(commits => {
-
-    let bookDes = (typeof(commits.description) === string) ? commits.description : "Sorry, but this book does not have a description." ;
+		let bookDes = (typeof(commits.description) === "string") ?
+		commits.description :
+		"This book does not have a description!";
     boxDes.insertAdjacentHTML("beforeend",
     // Inserimento descrizione
     `<h2>${commits.title}</h2>
@@ -33,7 +35,6 @@ function openDes(){
 }
 
 // Funzione di chiusura descrizione {COMPLETA}
-
 function closeDe(){
   //Cancellazione della descrizione
   boxDes.innerHTML = "";
